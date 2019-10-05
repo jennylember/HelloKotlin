@@ -1,0 +1,1 @@
+class Student (var firstName: String, var secondName: String, var numberOfGroup: Int, var marks: MutableSet<Int>)
