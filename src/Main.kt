@@ -1,20 +1,25 @@
+import Color.*
+import abstracts.*
 
 fun main (args: Array<String>) {
     println("Hello, Kotlin!")
-    lesson1()
-    lesson2()
-    lesson3()
-    var a: Int = lesson4function1()
-    println(a)
-    var b: Long = lesson4function2(100, 6000)
-    println(b)
-    lesson4function3()
-    var c = lesson4function4(10, 5.4)
-    println(c)
+//    lesson1()
+//    lesson2()
+//    lesson3()
+//    var a: Int = lesson4function1()
+//    println(a)
+//    var b: Long = lesson4function2(100, 6000)
+//    println(b)
+//    lesson4function3()
+//    var c = lesson4function4(10, 5.4)
+//    println(c)
 //    lesson5null()
 //    lesson5null2()
-    lesson6()
-    lesson7()
+//    lesson6()
+//    lesson7()
+//    lesson8()
+//    lesson10()
+    lesson11()
 }
 
 fun lesson1 () {
@@ -101,4 +106,59 @@ fun lesson7() {
     println(Color.WHITE.ordinal)
     println(Color.BLACK.ordinal)
 }
+
+fun lesson8() {
+    println(getFavoriteColor(setOf(PINK)))
+    println(getFavoriteColor(setOf(YELLOW)))
+    println(getFavoriteColor(setOf(BLACK, WHITE)))
+    val a = 50
+    val b = 50
+    whenVsIf(a, b)
+}
+
+fun getFavoriteColor (color: Set<Color>) = when (color) {
+    setOf(BLACK, WHITE) -> "Черно-белый"
+    setOf(GREEN) -> "Зеленый"
+    setOf(WHITE) -> "Белый"
+    setOf(PINK) -> "Розовый"
+    setOf(WHITE, YELLOW) -> "Белый или Желтый"
+    else -> "Нет такого цвета"
+}
+
+fun whenVsIf(a: Int, b: Int) = when {
+    (a > b) -> println("A > B")
+    (a == b) -> println("A = B")
+    else -> println("A < B")
+}
+
+fun ifVsWhen (a: Int, b: Int) {
+    if (a > b) {
+        println("A > B")
+    }
+    if (a < b) {
+        println("A < B")
+    }
+    if (a == b) {
+        println("A = B")
+    }
+}
+
+fun lesson10() {
+    val a: MyInterface = A()
+    val b: MyInterface = B()
+    a.function1()
+    a.function2()
+    b.function1()
+    b.function2()
+}
+
+fun lesson11() {
+    var template: Templates = TemplateA()
+    template.templateFunction()
+   // println(template.count)
+    template.templateFunction()
+    template.templateFunction()
+
+}
+
 
